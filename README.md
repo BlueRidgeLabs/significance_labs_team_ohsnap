@@ -1,10 +1,8 @@
 <h2>Significance Labs - Team OHSNAP - Summer 2014</h2>
-=============================
 
 The open sourced software created by team OHSNAP during Significance Labs Summer 2014.
 
 <h3>What's under the hood</h3>
-
 <ul>
   <li>NodeJS back-end server </li>
   <li>AnguarJS front-end client application </li>
