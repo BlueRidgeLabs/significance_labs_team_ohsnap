@@ -1,0 +1,32 @@
+<div class="yellow-button" ui-sref="int.info-confirmation">Finish this step</div>
+
+<div class="question-sections">
+    <div class="question-section odd" ng-class="{'finished': interviewCompleted.eligibility}"
+         ui-sref="int.ssn">
+        <span>1</span>
+        <h2>MORE ABOUT YOU</h2>
+        <p ng-hide="interviewCompleted.eligibility">Save 5 mins</p>
+        <p ng-show="interviewCompleted.eligibility">Saved 5 mins</p>
+    </div>
+    <div class="question-section" ng-class="{'finished': interviewCompleted.household}"
+            ui-sref="int.household">
+        <span>2</span>
+        <h2>HOUSEHOLD</h2>
+        <p ng-hide="interviewCompleted.household">Save 10 mins</p>
+        <p ng-show="interviewCompleted.household">Saved 10 mins</p>
+    </div>
+    <div class="question-section odd" ng-class="{'finished': interviewCompleted.income}"
+         ui-sref="int.income-frequency">
+        <span>3</span>
+        <h2>INCOME</h2>
+        <p ng-hide="interviewCompleted.income">Save 5 mins</p>
+        <p ng-show="interviewCompleted.income">Saved 5 mins</p>
+    </div>
+    <div class="question-section" ng-class="{'finished': interviewCompleted.expenses}"
+            ui-sref="int.resources">
+        <span>4</span>
+        <h2>EXPENSES</h2>
+        <p ng-hide="interviewCompleted.expenses">Save 5 mins</p>
+        <p ng-show="interviewCompleted.expenses">Saved 5 mins</p>
+    </div>
+</div>

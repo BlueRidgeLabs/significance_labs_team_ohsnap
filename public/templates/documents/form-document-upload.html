@@ -1,0 +1,48 @@
+<div class="doc-list">
+    <ul>
+        <li ng-click="goToDocUpload('IDENTITY')">
+            <div class="image-wrapper" ng-class="{'not-uploaded': isNotUploaded('IDENTITY'), 'in-progress-button': isInProgress('IDENTITY'), 'uploaded': isUploaded('IDENTITY')}">
+                <img ng-src="../images/sample/{{ docContent['IDENTITY'].sample_image  }}" alt=""/>
+            </div>
+            <h4>IDENTITY</h4>
+        </li>
+        <li ng-click="goToDocUpload('RESIDENCE')">
+            <div class="image-wrapper" ng-class="{'not-uploaded': isNotUploaded('RESIDENCE'), 'in-progress-button': isInProgress('RESIDENCE'), 'uploaded': isUploaded('RESIDENCE')}">
+                <img ng-src="../images/sample/{{ docContent['RESIDENCE'].sample_image  }}" alt=""/>
+            </div>
+            <h4>RESIDENCE</h4>
+        </li>
+
+        <li ng-click="goToDocUpload('SSN')">
+            <div class="image-wrapper" ng-class="{'not-uploaded': isNotUploaded('SSN'), 'in-progress-button': isInProgress('SSN'), 'uploaded': isUploaded('SSN')}">
+                <img ng-src="../images/sample/{{ docContent['SSN'].sample_image  }}" alt=""/>
+            </div>
+            <h4>SSN</h4>
+        </li>
+
+        <li ng-click="goToDocUpload('CITIZENSHIP')">
+            <div class="image-wrapper" ng-class="{'not-uploaded':isNotUploaded('CITIZENSHIP'), 'in-progress-button': isInProgress('CITIZENSHIP'), 'uploaded': isUploaded('CITIZENSHIP')}">
+                <img ng-src="../images/sample/{{ docContent['CITIZENSHIP'].sample_image  }}" alt=""/>
+            </div>
+            <h4>CITIZENSHIP</h4>
+        </li>
+
+        <li ng-click="goToDocUpload('EARNED_INCOME')">
+            <div class="image-wrapper" ng-class="{'not-uploaded': isNotUploaded('EARNED_INCOME'), 'in-progress-button': isInProgress('EARNED_INCOME'), 'uploaded': isUploaded('EARNED_INCOME')}">
+                <img ng-src="../images/sample/{{ docContent['EARNED_INCOME'].sample_image  }}" alt=""/>
+            </div>
+            <h4>INCOME</h4>
+        </li>
+
+        <li ng-click="goToDocUpload('ALT_INCOME')">
+            <div class="image-wrapper not-uploaded">
+                <img ng-src="../images/sample/{{ docContent['ALT_INCOME'].sample_image }}" alt=""/>
+            </div>
+            <h4>OTHER INCOME</h4>
+        </li>
+
+        <div class="clear"></div>
+    </ul>
+    <div class="yellow-button">I'm Done!</div>
+
+</div>

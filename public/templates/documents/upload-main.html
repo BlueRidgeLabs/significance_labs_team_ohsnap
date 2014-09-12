@@ -1,0 +1,15 @@
+
+<div class="page-header step-three" >
+    <div class="back-button" ng-click="goBack()"></div>
+    <div class="header">
+    	<h3 ng-show="getCurrentType() == 'Documents'">Step 3 of 3</h3>
+    	<h4 ng-show="getCurrentType() == 'Documents'">DOCUMENTS</h4>
+    	<h4 ng-hide="getCurrentType() == 'Documents'" class="sub-h4">{{ getCurrentType() }}</h4>
+    </div>
+    <h1 ng-show="getCurrentType() == 'Documents'">We’ll send in your documents.</h1>
+    <p ng-show="getCurrentType() == 'Documents'">Take a photo of your required documents and upload them here. We’ll fax them in for you.</p>
+</div>
+
+<form name="snapForm" id="signup-form" ng-submit="processForm()" novalidate>
+    <div class="form-wrapper" ui-view></div>
+</form>

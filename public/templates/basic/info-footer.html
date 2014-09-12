@@ -1,0 +1,38 @@
+<!-- info-footer.html -->
+<div class="footer">
+    <h5 ng-class="{'open':isActive.about, 'close':!isActive.about}" ng-click="click('about')">
+        ABOUT US
+    </h5>
+    <p class="accordion" ng-class="{'open':isActive.about, 'close':!isActive.about}">
+        We’re <a target="_blank" href="http://joinpropel.com/">Propel</a>, and we're trying to make it easier to apply for SNAP. We're based in Brooklyn at Significance Labs, and we aren’t affiliated with the US government.</p>
+    <h5 ng-class="{'open':isActive.faqs, 'close':!isActive.faqs}" ng-click="click('faqs')">
+        FAQs
+    </h5>
+    <div class="accordion" ng-class="{'open':isActive.faqs, 'close':!isActive.faqs}">
+        <p ><strong ng-click="clickFAQ('diff')">What’s the difference between applying here versus applying elsewhere?</strong>
+            <span ng-class="{'open':faqActive.diff, 'close':!faqActive.diff}">The application that gets submitted is the same. We think you’ll be able to save time and headaches by applying with us, though. You’ll be eligible for the exact same SNAP benefits no matter where you apply.</span>
+        </p>
+        <p>
+            <strong ng-click="clickFAQ('cost')">How much does this cost?</strong>
+            <span ng-class="{'open':faqActive.cost, 'close':!faqActive.cost}">It's free.</span>
+        </p>
+        <p>
+            <strong ng-click="clickFAQ('info')">What will you do with my personal information?</strong>
+            <span ng-class="{'open':faqActive.info, 'close':!faqActive.info}">
+                By using this app, you are agreeing to our <a ng-click="external('tos')" href="/terms-of-service.html">Terms of Service</a> and <a ng-click="external('privacy')" href="/privacy-policy.html">Privacy Policy</a>.
+            </span>
+        </p>
+        <p >
+            <strong ng-click="clickFAQ('more')">Where can I read more about SNAP?</strong>
+        <span ng-class="{'open':faqActive.more, 'close':!faqActive.more}">Learn more <a ng-click="external('usda.gov')" href="http://www.fns.usda.gov/snap/supplemental-nutrition-assistance-program-snap">here</a>.</span>
+        </p>
+    </div>
+    <h5 ng-class="{'open':isActive.contact, 'close':!isActive.contact}" ng-click="click('contact')">
+        CONTACT US
+    </h5>
+    <p class="accordion" ng-class="{'open':isActive.contact, 'close':!isActive.contact}" >
+        <a  href="http://joinpropel.com/">JoinPropel</a><br/>
+        <a  href="mailto://info@joinpropel.com">info@joinpropel.com</a><br/>
+        <a  href="tel://1-917-727-6855">+1 (917) 727-6855</a>
+    </p>
+</div>

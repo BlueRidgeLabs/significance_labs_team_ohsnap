@@ -1,0 +1,4 @@
+.idea/
+node_modules/
+nohup.out
+public/css/.sass-cache/

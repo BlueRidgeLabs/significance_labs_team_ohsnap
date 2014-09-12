@@ -1,0 +1,19 @@
+<div class="ng-modal" ng-show="show">
+    <div class='ng-modal-overlay' ng-click='hideModal()'></div>
+    <div class='ng-modal-dialog' ng-style='dialogStyle'>
+
+        <div class="modal-header">
+            <h1>Sorry we can't continue!</h1>
+        </div>
+        <div class="modal-body m-body" style="margin-bottom:-20px">
+            <p class="lead">We are unable to process your application if you do not provide either your phone number OR your address.</p>
+        </div>
+        <div class="modal-footer">
+                <button type="button" class="yellow-button"
+                        data-ng-click="hideModal()">Edit Phone</button>
+
+                <button class="yellow-button"
+                        data-ng-click="goToAddress()">Edit Address</button>
+            </div>
+    </div>
+</div>

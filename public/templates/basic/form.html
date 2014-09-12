@@ -1,0 +1,40 @@
+<!-- form.html -->
+    <div class="intro-header"  ng-hide="show_progress">
+        <div class="logo">EASY <i class="bolt-logo"></i> FOODSTAMPS NYC</div>
+        <h1>Get food stamps, <br/>without the <br/>hassle.</h1>
+        <div>
+            <div ng-click="$emit('show-progress-bar')" ui-sref="form.name" class="intro-button">Apply now</div>
+            <div ng-click="$emit('show-elig-progress-bar', 'dont-show-progress-bar')" ui-sref="form.household" class="intro-button dull">Am I eligible?</div>
+        </div>
+    </div>
+
+    <div class="page-header"  ng-show="show_progress && show_progress_bar">
+        <div class="header" ng-click="goBack()">
+            <h3>Step 1 of 3</h3>
+            <h4>Basics</h4>
+        </div>
+        <div class="progress" ng-show="show_progress && show_progress_bar" ng-class="{'remove-progress': remove_progress_bar }">
+            <div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" ng-style="{ width: progress +'%'}">
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header eligibility"   ng-show="!show_progress_bar">
+        <div class="header" ng-click="goBack()">
+            <h4>ELIGIBILITY</h4>
+        </div>
+        <div class="progress" ng-show="show_elig_progress_bar" ng-class="{'remove-progress': remove_progress_bar }">
+            <div class="progress-bar" role="progressbar" aria-valuenow="{{progress}}" aria-valuemin="0" aria-valuemax="100" ng-style="{ width: progress +'%'}">
+            </div>
+        </div>
+
+    </div>
+
+    
+    <!-- use ng-submit to catch the form submission and use our Angular function -->
+    <form name="snapForm" id="signup-form" novalidate>
+        <!-- our nested state views will be injected here -->
+        <div class="form-wrapper" ui-view></div>
+        <modal-dialog show='modalShown' width='90%' height='100%'>
+        </modal-dialog>
+    </form>

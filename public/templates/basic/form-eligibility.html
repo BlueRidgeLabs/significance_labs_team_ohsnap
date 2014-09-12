@@ -1,0 +1,12 @@
+<div class="page-second-header" style="top:-60px">
+    <h1 ng-show="formData.benefit_amount" class="eligible-for">You're eligible for</h1>
+    <span ng-show="formData.benefit_amount" class="amount" >${{formData.benefit_amount}}</span>
+    <span ng-show="formData.benefit_amount" class="each-month">EACH MONTH</span>
+    <p ng-show="formData.benefit_amount" class="sub-text">in SNAP benefits.</p>
+    <span class="no-benefit" ng-show="!formData.benefit_amount">Based on the information you provided, you are likely not eligible for SNAP.</span>
+</div>
+<p style="margin-top:-25px">This is an estimate, based on the information you provided.</p>
+<div class="yellow-button" ng-click="$emit('show-progress-bar') && $emit('add-progress-bar')" ui-sref="form.name">Start my application</div>
+
+
+

@@ -1,0 +1,62 @@
+<!-- form-basic-confirmation.html -->
+<h1>Great! You're almost done!</h1>
+<p> Review your information. Review your information to make sure everything is right.</p>
+<div class="confirm-info">
+
+    <div>
+        <h6>First Name</h6>
+        <input type="text" placeholder="First name" name="first_name" id="first_name" ng-model="formData.name.first_name" required/>
+        <span class="help-block" ng-show="snapForm.first_name.$error.required">First name required</span>
+    </div>
+
+    <div>
+        <h6>Last Name</h6>
+        <input type="text" placeholder="Last name" name="last_name" id="last_name" ng-model="formData.name.last_name" required/>
+        <span class="help-block" ng-show="snapForm.first_name.$error.required">Last name required</span>
+    </div>
+
+    <div>
+        <h6>Phone Number</h6>
+        <input class="form-control" type="number" placeholder="Phone Number" name="phone" id="phone"
+           ng-model="formData.phone_main" ng-minlength="10" ng-maxlength="11" min="0"/>
+        <span class="help-block" ng-show="has_phone && snapForm.phone.$error.required">10 digit number required.</span>
+    </div>
+
+    <div>
+        <h6>Street Address</h6>
+        <input type="text" name="street_address" id="street_address" placeholder="Street Address"
+           ng-model="formData.address.street_address" ng-minlength="3">
+        <span class="help-block" ng-show="has_address && snapForm.street_address.$error.required">Address required</span>
+    </div>
+
+    <div>
+        <h6>Apt #</h6>
+        <input type="text" id="apt_number" placeholder="APT #" ng-model="formData.address.apt_number">
+    </div>
+
+    <div>
+        <h6>Zip Code</h6>
+        <input type="number" name="zip" id="zip" placeholder="Zip Code" ng-model="formData.address.zip" min="10000" max="120000" ng-minlength="5">
+    </div>
+
+    <div>
+        <h6>Household Size</h6>
+        <input class="form-control" type="number" placeholder="Household Size" name="household"  id="household"
+               ng-model="formData.household" required min="1" required/>
+        <span class="help-block" ng-show="snapForm.household.$error.required">Household size required</span>
+    </div>
+
+    <div>
+        <h6>Household Income</h6>
+        <input class="form-control" placeholder="$" type="number" name="income"  id="income" ng-model="formData.income" required/>
+        <span class="help-block" ng-show="snapForm.income.$error.required">Household income required</span>
+    </div>
+</div>
+
+<div class="checkbox-group">
+    <input type="checkbox" class="agree-checkbox big-checkbox" id="agree_to_legal"  ng-model="basic_confirmation_agree"/>
+    <span style="padding-left:10px">I certify that the information I am submitting is true and authorize Easy Food Stamps to sign my application on my behalf.</span>
+</div>
+<div ng-show="!basic_confirmation_agree || snapForm.validation.$error" class="yellow-button disabled" ng-click="checkboxAlert()">Confirm answers</div>
+<div ng-show="basic_confirmation_agree && !snapForm.validation.$error && !disable_submit" class="yellow-button" ng-click="submitBasicApp()">Confirm answers</div>
+<div ng-show="basic_confirmation_agree && disable_submit" class="yellow-button spinner-button"><i></i></div>

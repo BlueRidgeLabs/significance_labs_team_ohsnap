@@ -1,0 +1,17 @@
+<!-- feedback-footer.html -->
+<div class="feedback-container" ng-click="feedbackClicked=!feedbackClicked" >
+    <span class="feedback" ng-class="{'open':feedbackClicked, 'close':!feedbackClicked}">How likely are you to recommend Easy Food Stamps to a friend?</span>
+</div>
+<div class="accordion" ng-class="{'open':feedbackClicked, 'close':!feedbackClicked}">
+
+    <select class="form-control" ng-model="selected_rating" ng-options="opt as opt.label for opt in rating_options" id="rating" name="rating" required>
+    </select>
+
+    <textarea class="form-control" cols="30" rows="10" name="feedback_message" id="feedback_message" ng-model="formData.feedback_message" placeholder="What did you like and dislike?" ng-minlength="5"></textarea>
+    <span class="text-next-steps">We’re constantly trying to improve. Would you like to receive a text message when we have new features ready?</span>
+    <div class="checkbox-group">
+        <label><input type="checkbox" class="big-checkbox" id="agree_to_text" value="true"  ng-model="formData.sms_agree"/>
+            <span>Yes, please text me when the next steps are ready!</span></label>
+    </div>
+    <button ng-click="submitFeedback(selected_rating)" class="yellow-button">Submit feedback</button>
+</div>

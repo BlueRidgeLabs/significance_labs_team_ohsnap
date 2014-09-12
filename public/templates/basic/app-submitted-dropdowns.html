@@ -1,0 +1,20 @@
+<!-- app-submitted-dropdowns.html -->
+<h5 ng-class="{'open':isActive.when, 'close':!isActive.when}" ng-click="click('when')">
+    When is my interview?
+</h5>
+<div class="accordion" ng-class="{'open':isActive.when, 'close':!isActive.when}">
+    <p ng-show="formData.phone_main">A SNAP worker is legally obligated to call you in 5 days. Expect a phone call before
+        {{ date_of_phone_call | date:'EEEE, MMMM d' }} to schedule the exact interview time.
+    </p>
+    <p ng-hide="formData.phone_main">You will receive a letter in the mail confirming your SNAP application submission within 5 days.</p>
+
+
+
+</div>
+<h5 ng-class="{'open':isActive.what, 'close':!isActive.what}" ng-click="click('what')">
+    What is the interview for?
+</h5>
+<div class="accordion" ng-class="{'open':isActive.what, 'close':!isActive.what}">
+    <p>The interview is a required step in the application process. A SNAP worker must speak with you over the phone or
+        in person to confirm the answers you provided in the application form and to get additional information about your situation.</p>
+</div>

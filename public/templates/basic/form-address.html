@@ -1,0 +1,20 @@
+<!-- form-address.html -->
+<h1>What’s your address?</h1>
+
+<div class="form-group" ng-class="{'has-success':snapForm.street_address.$pristine, 'has-error': snapForm.street_address.$invalid}">
+    <input type="text" class="form-control" name="street_address" id="street_address" placeholder="Street Address" ng-model="formData.address.street_address" ng-minlength="3" autofocus="true">
+    <span class="help-block" ng-show="submitted_address && has_address && !(snapForm.street_address.$valid)">Street Address Required</span>
+</div>
+<div class="form-group">
+    <input type="text" class="form-control" id="apt_number" placeholder="APT #" ng-model="formData.address.apt_number">
+</div>
+
+<div class="form-group" ng-class="{'has-success':snapForm.zip.$pristine ,'has-error': submitted_address && (snapForm.zip.$invalid || snapForm.zip.$error.minlength || snapForm.zip.$isEmpty())}">
+    <input type="number" class="form-control" name="zip" id="zip" placeholder="Zip Code" ng-model="formData.address.zip" ng-minlength="5" minlength="5" maxlength="5" min="10000" max="12000">
+    <span class="help-block" ng-show="submitted_address && snapForm.zip.$error.minlength && snapForm.zip.$dirty">5 Digit Zip Code Required</span><br/>
+    <span class="help-block" ng-show="submitted_address && (snapForm.zip.$error.min || snapForm.zip.$error.max)">Easy Food Stamps is currently only available for New York</span>
+</div>
+<p>If you do not have an address please leave this form blank.
+</p>
+
+<div class="yellow-button" ng-click="completedAddress()">Continue</div>

@@ -1,0 +1,9 @@
+<h1>What is your monthly income?</h1>
+
+<div class="input-group dollar-input" ng-class="{'has-success':snapForm.monthly_income.$pristine ,'has-error': snapForm.monthly_income.$invalid }">
+    <input class="form-control" type="number" name="monthly_income"  id="monthly_income" ng-model="user.monthly_income" autofocus="true" min="0"/>
+        <span class="help-block"  ng-show="((snapForm.monthly_income.$error) && (snapForm.monthly_income.$dirty))">
+            Input 0 if no income in the last 30 days.</span>
+</div>
+
+<div class="yellow-button" ui-sref="int.income-hours">Continue</div>

@@ -1,0 +1,10 @@
+<!-- form-telephone.html -->
+<h1>What’s your phone number?</h1>
+<div class="form-group" ng-class="{'has-success':snapForm.phone.$pristine ,'has-error': snapForm.phone.$invalid}">
+    <input class="form-control" type="number" placeholder="Phone Number" name="phone" id="phone" ng-model="formData.phone_main" min="0" minlength="10" maxlength="11" autofocus="true"/>
+    <span class="help-block" ng-show="submitted_phone && snapForm.last_name.$invalid">Ten Digit Telephone Number Required</span>
+</div>
+<p>If you don’t have a phone number, leave this blank. Note that you’ll have to visit the SNAP office in person.
+</p>
+<button class="yellow-button" ng-click="completedTelephone()">Continue</button>
+

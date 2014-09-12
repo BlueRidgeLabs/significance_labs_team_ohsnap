@@ -1,0 +1,18 @@
+<h1>Which ones are you applying for?</h1>
+
+<p>You can apply with other people if:<br/>
+-  You live together, and you buy and cook food together, or<br/>
+-  You live with and are applying for your child, or<br/>
+-  You live with and are applying for your husband or wife
+</p>
+
+<div ng-repeat="person in user.household_members track by $index" class="household-applying" ng-show="person.name">
+<div class="checkbox-group">
+    <input id="applying_{{ $index }}" type="checkbox" name="applying" value="true" ng-model="person.applying"/>
+    <span for="applying_{{ $index }}">{{ person.name }}</span>
+</div>
+</div>
+
+<div ng-show="hasApplyingMembers()" class="yellow-button" ui-sref="int.household-ssn">Continue</div>
+<div ng-show="!hasApplyingMembers()" ng-click="$emit('int-main','household')" class="yellow-button" ui-sref="int.main">Continue</div>
+

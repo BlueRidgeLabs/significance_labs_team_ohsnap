@@ -1,0 +1,12 @@
+<h1>How much are your monthly expenses?</h1>
+
+<div class="input-group dollar-input" ng-class="{'has-success':snapForm.expenses.$pristine ,'has-error': snapForm.expenses.$invalid }">
+    <input class="form-control" type="number" name="expenses"  id="expenses"
+           ng-model="formData.eligibility_expenses" autofocus="true" min="0" required ng-enter/>
+    <span class="help-block"  ng-show="submitted_expenses && snapForm.expenses.$error.min">
+            Minimum expenses is 0.</span>
+    <span class="help-block"  ng-show="submitted_expenses && snapForm.expenses.$invalid && !snapForm.expenses.$error.min">
+            You must enter a number.</span>
+</div>
+
+<div class="yellow-button" ng-class="{'disabled': snapForm.expenses.$invalid}" ng-click="completeEligibilityCalc()">Continue</div>

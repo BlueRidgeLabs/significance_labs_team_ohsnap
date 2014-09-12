@@ -1,0 +1,87 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="/images/logo_bolt.png" />
+
+    <!-- CSS -->
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,100italic,100,300,300italic,400italic,500,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/modal.css">
+
+    <!-- JS-->
+    <script src="js/angular-file-upload-shim.js"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-animate.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular-touch.min.js"></script>
+
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-52493533-1', 'auto');
+        ga('require', 'displayfeatures');
+    </script>
+
+    <!--<script src="js/local/angular.min.js"></script>
+    <script src="js/local/angular-ui-router.min.js"></script>
+    <script src="js/local/angular-animate.min.js"></script>
+    <script src="js/local/angular-touch.js"></script>-->
+
+    <script src="js/angular-file-upload.min.js"></script>
+    <script src="js/ui-bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/directives/ngDocumentFullscreenDirective.js"></script>
+    <script src="js/factories/DocumentUploaderFactory.js"></script>
+    <script src="js/services/NoContactModalService.js"></script>
+    <script src="js/directives/infoFooterDirective.js"></script>
+    <script src="js/directives/ngEnterDirective.js"></script>
+    <script src="js/filters/telephoneFilter.js"></script>
+    <script src="js/factories/apiFactory.js"></script>
+    <script src="js/factories/userDataFactory.js"></script>
+    <script src="js/directives/appSubmittedDropdownDirective.js"></script>
+    <script src="js/directives/feedbackFooterDirective.js"></script>
+    <script src="js/directives/modalDirective.js"></script>
+    <script src="js/directives/sampleDocumentsDirective.js"></script>
+    <script src="js/Controllers/DocumentUploadController.js"></script>
+    <script src="js/Controllers/FormController.js"></script>
+    <script src="js/Controllers/InterviewController.js"></script>
+    <script src="js/app.js"></script>
+
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=1">
+
+</head>
+
+<!-- apply our angular app -->
+<body ng-app="formApp">
+<!-- tag manager
+    15s check
+    page scrolling check -->
+<!-- Google Tag Manager -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-N4PWKL"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-N4PWKL');</script>
+
+<!-- End Google Tag Manager -->
+<h5 class="mobile-notice">easyfoodstamps.com is designed specifically for mobile. Learn more at <a
+        href="http://joinpropel.com">joinpropel.com</a></h5>
+<div class="container">
+
+    <!-- views will be injected here -->
+    <div ui-view class="main-ui-view"></div>
+
+</div>
+</body>
+
+</html>

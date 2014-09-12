@@ -1,0 +1,38 @@
+
+	<div class="document-upload" ng-show="getDocDetailState() === DOC_STATUS.NOT_UPLOADED">
+    <p><strong>{{ getCurrentContent() }}</strong></p>
+
+		<div class="yellow-button add-picture">Take a picture
+			<input type="file" ng-file-select="uploadFile($files)">
+		</div>
+		<sample-documents></sample-documents>
+	</div>
+
+	<div class="document-uploading" ng-show="getDocDetailState() === DOC_STATUS.IN_PROGRESS" >
+		<p><strong>Great! Your picture is uploading. In the meantime can keep uploading more documents.</strong></p>
+		<div class="yellow-button add-picture uploading-picture-button">
+			<div class="upload-progress-bar" ng-style="{width: docProgress[getCurrentType()] + '%'}"></div>
+			Uploading ...
+			<input type="file">
+		</div>
+        <div class="yellow-button" ui-sref="upload.documents">
+            Continue
+        </div>
+	</div>
+
+	<div class="document-uploaded" ng-show="getDocDetailState() === DOC_STATUS.UPLOADED" >
+		<p><strong>Picture successfully uploaded</strong></p>
+		<div class="yellow-button add-picture">
+			Retake
+			<input type="file" ng-file-select="uploadFile($files)">
+		</div>
+        <div class="picture-wrapper">
+            <img ng-src="{{ localDocs[getCurrentType()] }}" style="width:100%" />
+        </div>
+
+        <div class="yellow-button" ui-sref="upload.documents">
+            Continue
+        </div>
+		
+	</div>
+	

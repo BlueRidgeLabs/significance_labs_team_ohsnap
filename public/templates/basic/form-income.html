@@ -1,0 +1,26 @@
+<!-- form-income.html -->
+<h1>What was your household income last month?</h1>
+<p>This includes:<br/>
+    -  Wages<br/>
+    -  Child support<br/>
+    -  Social security<br/>
+    -  Money from relatives<br/>
+    -  Other sources of income<br/>
+</p>
+<div class="form-group">
+
+    <div class="input-group dollar-input" ng-class="{'has-success':snapForm.income.$pristine ,'has-error': snapForm.income.$invalid }">
+        <input class="form-control" type="number" name="income" min="0" id="income" ng-model="formData.income" autofocus="true" required ng-enter/>
+        <span class="help-block"  ng-show="submitted_income && snapForm.income.$error.required">
+            Input 0 if no income in the last 30 days.</span>
+        <span class="help-block"  ng-show="submitted_income && snapForm.income.$error.min">
+            Minimum income is 0.</span>
+    </div>
+</div>
+
+<div class="yellow-button" ng-show="formData.name.first_name" ng-class="{'disabled':snapForm.income.$invalid}"
+     ng-click="completedIncome()">Continue</div>
+
+<div class="yellow-button" ng-show="!formData.name.first_name" ng-class="{'disabled':snapForm.income.$invalid}"
+     ng-click="completedEligibilityIncome()">Continue</div>
+

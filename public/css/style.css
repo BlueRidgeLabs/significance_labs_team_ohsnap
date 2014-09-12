@@ -1,0 +1,244 @@
+/* style.css */
+/* BASIC STYLINGS
+============================================================================= */
+body { padding-top:20px; background-color:lightgray; font-family: 'Roboto', sans-serif;}
+/*font-family: GothamRnd-Medium; src:url('GothamRnd-Medium.otf');*/
+/* form styling */
+#form-container                { background:white; margin-bottom:20px; border-radius:5px; color:black;}
+
+#form-container .page-header   { background:deepskyblue; color:white; margin:0; padding:10px; border-bottom:1px solid white; border-top-left-radius:5px; border-top-right-radius:5px; }
+
+/* numbered buttons */
+#status-buttons                 {  }
+#status-buttons a               { color:#FFF; display:inline-block; font-size:12px; margin-right:10px; text-align:center; text-transform:uppercase; }
+#status-buttons a:hover         { text-decoration:none;  }
+
+/* we will style the span as the circled number */
+#status-buttons span            { background:#080808; display:block; height:30px; margin:0 auto 10px; padding-top:5px; width:30px;
+    border-radius:50%; }
+
+/* active buttons turn light green-blue*/
+#status-buttons a.active span   { background:#00BC8C; }
+
+/** main style
+========================================================================================= */
+.main_page { height:360px; background: url('../images/background.png'); background-size:100%;color:white; margin:0; padding:10px; border-bottom:1px solid white; border-top-left-radius:5px; border-top-right-radius:5px;}
+
+.easy-title {
+    margin-bottom:25px;
+    letter-spacing: 1px;
+}
+
+
+
+#alt_mailing_btn { background-color: darkorange; border-color: darkorange}
+
+table thead th {font-weight:normal; font-size:small; text-align: center}
+table tbody tr td {text-align:center}
+
+.btn-remove-ws { white-space: normal;}
+
+.info-number {font-size: 61px;font-weight: 100;color:darkgray}
+
+.info-border {border-bottom: 1px solid lightblue}
+
+.form-control, input {border:1px solid black}
+
+.form-control, input:focus {border:1px solid black}
+
+.time-est {color: #bababa}
+
+.savings { color: #006aff; font-weight: 900}
+
+textarea:focus,
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="time"]:focus,
+input[type="week"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="color"]:focus,
+.uneditable-input:focus {
+    border-color: #62c462;
+    outline: 0;
+    outline: thin dotted \9;
+    /* IE6-9 */
+
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(98, 196, 98, 0.6);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(98, 196, 98, 0.6);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(98, 196, 98, 0.6);
+}
+
+.accordion-toggle {
+    display:block;
+    margin:-5px;
+    padding:5px;
+}
+
+#agree_to_legal {
+    padding: 10px;
+    width:16px;
+    height:16px;
+    margin-left:10%;
+    margin-top:5%
+}
+
+#agree_to_text {
+    padding: 10px;
+    width:16px;
+    height:16px;
+    margin-left:8%;
+    margin-top:5%;
+
+}
+
+.big-checkbox {
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+}
+
+.panel-group .panel {
+    border-radius:0px;
+}
+
+.footer-info .btn {background-color: slategray;border-bottom: 1px black solid;}
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+#circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 75px;
+    font-size: 35px;
+    color: #ffffff;
+    line-height: 150px;
+    text-align: center;
+    background: rgb(0, 191, 255);
+    margin:auto;
+}
+
+#arrow_clock{
+    width: 150px;
+    height: 150px;
+    font-size: 35px;
+    color: #ffffff;
+    line-height: 150px;
+    text-align: center;
+    margin:auto;
+    background-size:100%;
+    background-repeat:no-repeat;
+}
+
+
+.carousel-control {
+    top:50%;
+    width:auto;
+    height:1em;
+    background:transparent!important;
+}
+.carousel-control .glyphicon-chevron-left, .carousel-control .glyphicon-chevron-right  {
+    position:static;
+    display:block;
+    width:auto;
+    background: transparent;
+    color:black
+}
+.carousel-control .glyphicon-chevron-left:before {
+    margin-left:0;
+}
+
+.carousel-indicators {
+    top:-25px;
+
+}
+
+.carousel-indicators li {
+    background-color: lightgray;
+    border-color: transparent;
+    margin-left:3px;
+    margin-right:3px;
+}
+
+.carousel-indicators .active {
+    background-color:#a9a9a9;
+}
+
+.carousel-inner {
+    height:300px;
+}
+
+info-footer div.row {
+    margin-top:15px
+}
+
+.faqs .panel-group li .panel {
+    border:none;
+}
+
+.faqs .panel-group li .panel .panel-heading {
+    background-color: white;
+    border: none;
+}
+
+
+/* style.css */
+/* ANIMATION STYLINGS
+============================================================================= */
+#signup-form            { position:relative; min-height:715px; padding:30px; padding-top:0px; }
+#form-views             { width:auto; }
+
+/* basic styling for entering and leaving */
+/* left and right added to ensure full width */
+#form-views.ng-enter,
+#form-views.ng-leave      { position:absolute; left:30px; right:30px;
+    transition:0.5s all ease; -moz-transition:0.5s all ease; -webkit-transition:0.5s all ease;
+}
+
+/* enter animation */
+#form-views.ng-enter            {
+    -webkit-animation:slideInRight 0.5s both ease;
+    -moz-animation:slideInRight 0.5s both ease;
+    animation:slideInRight 0.5s both ease;
+}
+
+/* leave animation */
+#form-views.ng-leave            {
+    -webkit-animation:slideOutLeft 0.5s both ease;
+    -moz-animation:slideOutLeft 0.5s both ease;
+    animation:slideOutLeft 0.5s both ease;
+}
+
+/* ANIMATIONS
+============================================================================= */
+/* slide out to the left */
+@keyframes slideOutLeft {
+    to 		{ transform: translateX(-200%); }
+}
+@-moz-keyframes slideOutLeft {
+    to 		{ -moz-transform: translateX(-200%); }
+}
+@-webkit-keyframes slideOutLeft {
+    to 		{ -webkit-transform: translateX(-200%); }
+}
+
+/* slide in from the right */
+@keyframes slideInRight {
+    from 	{ transform:translateX(200%); }
+    to 		{ transform: translateX(0); }
+}
+@-moz-keyframes slideInRight {
+    from 	{ -moz-transform:translateX(200%); }
+    to 		{ -moz-transform: translateX(0); }
+}
+@-webkit-keyframes slideInRight {
+    from 	{ -webkit-transform:translateX(200%); }
+    to 		{ -webkit-transform: translateX(0); }
+}

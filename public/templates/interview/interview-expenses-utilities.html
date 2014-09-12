@@ -1,0 +1,22 @@
+<h1>What utilities do you pay, separate from rent?</h1>
+
+
+<input ng-model="user.utilities.gas" id="gas" type="checkbox" class="name-input utilities-input" name="utilities"><label
+        for="gas">Gas</label>
+<br/>
+<input ng-model="user.utilities.electric" id="electric" type="checkbox" class="name-input utilities-input"   name="utilities"><label
+        for="electric">Electric</label>
+<br/>
+<input ng-model="user.utilities.water" id="water" type="checkbox" class="name-input utilities-input"  name="utilities"><label
+        for="water">Water</label>
+<br/>
+<input ng-model="user.utilities.phone" id="phone" type="checkbox" class="name-input utilities-input"  name="utilities"><label
+        for="phone">Phone</label>
+
+<br/>
+<input ng-model="user.utilities.other" id="other" type="checkbox" class="name-input utilities-input" name="utilities"><label
+        for="other">Other</label>
+<br/>
+<input type="text" placeholder="Please Specify Other" ng-show="user.utilities.other" ng-model="user.utilities.other_name"/>
+        
+<div class="yellow-button" ui-sref="int.expenses-utilities-total">Continue</div>

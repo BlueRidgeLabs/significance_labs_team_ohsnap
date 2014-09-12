@@ -1,0 +1,86 @@
+<ng-switch on="interview_steps">
+    <div  ng-switch-when="0"  class="page-header step-two">
+        <div class="back-button" ng-click="goBack()"></div>
+        <div class="header">
+            <h4 class="sub-h4">MORE ABOUT YOU</h4>
+        </div>
+        <div class="progress" ng-show="show_interview_progress">
+            <div class="progress-bar"  ng-style="{ width: int_progress +'%'}">
+            </div>
+        </div>
+    </div>
+
+    <div  ng-switch-when="1"  class="page-header step-two">
+        <div class="back-button" ng-click="goBack()"></div>
+        <div class="header" ng-switch="interview_steps">
+            <h4 class="sub-h4">HOUSEHOLD</h4>
+        </div>
+        <div class="progress" ng-show="show_interview_progress">
+            <div class="progress-bar"  ng-style="{ width: int_progress +'%'}">
+            </div>
+        </div>
+    </div>
+
+    <div  ng-switch-when="2"  class="page-header step-two">
+        <div class="back-button" ng-click="goBack()"></div>
+        <div class="header" ng-switch="interview_steps">
+            <h4 class="sub-h4">INCOME</h4>
+        </div>
+        <div class="progress" ng-show="show_interview_progress">
+            <div class="progress-bar"  ng-style="{ width: int_progress +'%'}">
+            </div>
+        </div>
+    </div>
+
+    <div  ng-switch-when="3"  class="page-header step-two">
+        <div class="back-button" ng-click="goBack()"></div>
+        <div class="header" ng-switch="interview_steps">
+            <h4 class="sub-h4">EXPENSES</h4>
+        </div>
+        <div class="progress" ng-show="show_interview_progress">
+            <div class="progress-bar"  ng-style="{ width: int_progress +'%'}">
+            </div>
+        </div>
+    </div>
+
+    <div  ng-switch-when="-1" class="page-header step-two">
+
+        <div class="back-button" ng-click="goBack()"></div>
+        <div class="header">
+            <h3>Step 2 of 3</h3>
+            <h4>INTERVIEW</h4>
+        </div>
+        <div class="progress" ng-show="show_interview_progress">
+            <div class="progress-bar"  ng-style="{ width: int_progress +'%'}">
+            </div>
+        </div>
+
+        <div ng-switch="interview_progress_status">
+            <h1 ng-switch-when="0">Ace your interview!</h1 >
+            <p ng-switch-when="0">Answering your interview questions in advance will make your phone interview shorter.</p>
+            <h1 ng-switch-when="1">Good job so far!</h1>
+            <h1 ng-switch-when="2">Great! You're done!</h1>
+        </div>
+
+        <div class="estimate">
+            <div class="time-estimate">
+                <h1 ng-class="{'finish':interviewCompleted.eligibility && interviewCompleted.household &&interviewCompleted.income && interviewCompleted.expenses}">
+                    {{ 45 - minutes_saved }}<span>min</span>
+                </h1>
+                <h2>Estimated interview</h2>
+            </div>
+            <div class="benefit-estimate">  
+                <h1>${{ estimated_benefit }}</h1>
+                <h2>Estimated benefit</h2>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</ng-switch>
+
+<form name="interviewForm" id="interview-form" novalidate>
+    <!-- our nested state views will be injected here -->
+    <div class="form-wrapper" ui-view></div>
+</form>
+
+

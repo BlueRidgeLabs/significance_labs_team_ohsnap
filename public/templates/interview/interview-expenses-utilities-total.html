@@ -1,0 +1,7 @@
+<h1>How much do you pay for utilities each month?</h1>
+
+<div class="input-group dollar-input" ng-class="{'has-success':snapForm.monthly_income.$pristine ,'has-error': snapForm.monthly_income.$invalid }">
+    <input type="number" name="utilities_total" ng-model="user.expenses.utilities_total" />
+</div>
+
+<div class="yellow-button" ng-click="$emit('int-main', 'expenses')" ui-sref="int.main">Complete</div>

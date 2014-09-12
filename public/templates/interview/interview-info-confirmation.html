@@ -1,0 +1,123 @@
+<!-- form-basic-confirmation.html -->
+<h1>Great! You're almost done!</h1>
+<p> Review your information. After you check the box and hit Submit Application, we'll send your application.</p>
+<div class="yellow-button" style="text-align: left;" ng-click="scrollDown()">Scroll to bottom</div>
+<div class="confirm-info">
+    <div>
+        <h6>First Name</h6>
+        <input type="text" placeholder="First name" name="first_name" id="first_name" ng-model="user.name.first_name" required/>
+        <span class="help-block" ng-show="snapForm.first_name.$error.required">First name required</span>
+    </div>
+
+    <div>
+        <h6>Last Name</h6>
+        <input type="text" placeholder="Last name" name="last_name" id="last_name" ng-model="user.name.last_name" required/>
+        <span class="help-block" ng-show="snapForm.first_name.$error.required">Last name required</span>
+    </div>
+
+    <div>
+        <h6>Street Address</h6>
+        <input type="text" name="street_address" id="street_address" placeholder="Street Address"
+               ng-model="user.address.street_address" ng-minlength="3">
+        <span class="help-block" ng-show="has_address && snapForm.street_address.$error.required">Address required</span>
+    </div>
+
+    <div>
+        <h6>Apt #</h6>
+        <input type="text" id="apt_number" placeholder="APT #" ng-model="user.address.apt_number">
+    </div>
+
+    <div>
+        <h6>Zip Code</h6>
+        <input type="number" name="zip" id="zip" placeholder="Zip Code" ng-model="user.address.zip" min="10000" max="120000" ng-minlength="5">
+    </div>
+
+    <div>
+        <h6>Household Size</h6>
+        <input class="form-control" type="number" placeholder="Household Size" name="household"  id="household"
+               ng-model="user.household" required min="1" required/>
+        <span class="help-block" ng-show="snapForm.household.$error.required">Household size required</span>
+    </div>
+
+    <div>
+        <h6>Household Income</h6>
+        <div class="input-group dollar-input" ng-class="{'has-success':snapForm.income.$pristine ,'has-error': snapForm.income.$invalid }">
+            <input class="form-control" placeholder="$" type="number" name="income"  id="income" ng-model="user.income" required/>
+        </div>
+        <span class="help-block" ng-show="snapForm.income.$error.required">Household income required</span>
+    </div>
+
+    <div>
+        <h6>Phone Number</h6>
+        <input class="form-control" type="number" placeholder="Phone Number" name="phone" id="phone"
+               ng-model="user.phone_main" ng-minlength="10" ng-maxlength="11" min="0"/>
+        <span class="help-block" ng-show="has_phone && snapForm.phone.$error.required">10 digit number required.</span>
+    </div>
+
+    <div>
+        <h6>SSN</h6>
+        <input ng-model="user.ssn" type="number" placeholder="XXX - XX - XXXX" class="name-input" maxlength="9"/>
+    </div>
+
+    <div>
+        <h6>DOB</h6>
+        <input ng-model="user.dob" type="date" class="dob-input"/>
+    </div>
+
+    <div>
+        <h6>Marital Status</h6>
+        <select name="marital_confirm" id="marital_confirm" ng-model="user.marital" ng-options="obj.value as obj.name for obj in MaritalOpts"></select>
+    </div>
+
+    <div>
+        <h6>Pregnant, Blind or Disabled?</h6>
+        <select name="bpdisabled" id="bpdisabled" ng-model="user.personal_disabled" ng-options="obj.value as obj.name for obj in YNOpts"></select>
+    </div>
+
+    <div>
+        <h6>US Citizen?</h6>
+        <select name="us_citizen" id="us_citizen" ng-model="user.citizen" ng-options="obj.value as obj.name for obj in YNOpts"></select>
+    </div>
+
+    <div>
+        <h6>Total Resources</h6>
+        <div class="input-group dollar-input" ng-class="{'has-success':snapForm.total_resources.$pristine ,'has-error': snapForm.total_resources.$invalid }">
+            <input type="text" id="total_resources" ng-model="user.total_resources" ng-value="user.total_resources"/>
+        </div>
+    </div>
+
+    <div>
+        <h6>Mortgage/Rent</h6>
+        <div class="input-group dollar-input" ng-class="{'has-success':snapForm.mortgage.$pristine ,'has-error': snapForm.mortgage.$invalid }">
+            <input type="number" id="mortgage" ng-model="user.utilities.rent" ng-value="user.utilities.rent"/>
+        </div>
+    </div>
+
+    <div class="household-members-confirm"  ng-show="hasApplyingMembers()">
+        <h6>Applicants in your household</h6>
+        <div ng-repeat="person in user.household_members track by $index" ng-show="person.applying">
+            <h5  ng-class="{'close': !person.show, 'open': person.show}" ng-click="showHouseholdMember(person.name)">{{ person.name }}</h5>
+            <div ng-show="person.show">
+                <h6>Name</h6>
+                <input type="text" ng-model="person.name"/>
+                <h6>SSN</h6>
+                <input type="text" ng-model="person.ssn"  placeholder="XXX - XX - XXXX" maxlength="9"/>
+                <h6>DOB</h6>
+                <input type="date" ng-model="person.dob" class="dob-input"/>
+                <h6>Relation</h6>
+                <select name="relationship" id="relation_{{ $index }}" ng-model="person.relation" ng-options="opt.value as opt.name for opt in relationshipOptions" ></select>
+                <h6>Income</h6>
+                <input type="number" ng-model="person.income" />
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div id="confirm_anchor" class="checkbox-group">
+    <input type="checkbox" class="agree-checkbox big-checkbox" id="agree_to_legal"  ng-model="basic_confirmation_agree"/>
+    <span style="padding-left:10px">I certify that the information I am submitting is true and authorize Easy Food Stamps to sign my application on my behalf.</span>
+</div>
+<div ng-show="!basic_confirmation_agree || snapForm.validation.$error" class="yellow-button disabled" ng-click="checkboxAlert()">Confirm answers</div>
+<div ng-show="basic_confirmation_agree && !snapForm.validation.$error && !disable_submit" class="yellow-button" ng-click="submitBasicApp()">Confirm answers</div>
+<div ng-show="basic_confirmation_agree && disable_submit" class="yellow-button spinner-button"><i></i></div>

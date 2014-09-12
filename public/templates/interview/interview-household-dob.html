@@ -1,0 +1,10 @@
+<h1>Household members date of birth?</h1>
+
+<div ng-repeat="person in user.household_members track by $index" class="household-dob" ng-show="person.applying">
+    <h6 for="dob_{{ $index }}">What is {{ person.name }}'s date of birth?</h6>
+
+    <input id="dob_{{ $index }}" class="dob-input" type="date" name="dob" value="1988-05-15" ng-model="person.dob"/>
+</div>
+
+<div class="yellow-button" ui-sref="int.household-relation">Continue</div>
+

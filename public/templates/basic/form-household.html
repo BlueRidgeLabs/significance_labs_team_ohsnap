@@ -1,0 +1,27 @@
+<!-- form-household.html -->
+<h1>How many people live in your house?</h1>
+<p>Only count people who are living at the same address and prepare meals together, including yourself.
+</p>
+
+<div class="form-group" ng-class="{'has-success':snapForm.household.$pristine ,'has-error': snapForm.household.$invalid }">
+    <input class="form-control" type="number" name="household"  id="household" ng-model="formData.household" autofocus="true" required min="1" ng-enter/>
+    <span class="help-block" ng-show="submitted_household && (snapForm.household.$invalid || snapForm.household.$error.required || snapForm.household.$error.min)">
+        Number of people living with you is required. Must be greater than 0. </span>
+</div>
+
+<div class="form-group">
+    <div class="checkbox-group">
+        <input type="checkbox" class="big-checkbox" id="disabled_or_elderly" ng-model="formData.disabled"/>
+        <span>Check here if you are living with someone elderly or disabled.</span>
+    </div>
+</div>
+
+<div ng-show="formData.name.first_name" class="yellow-button" ng-class="{'disabled': snapForm.household.$invalid}"
+     ng-click="completedHousehold()">Continue</div>
+
+<div ng-show="!formData.name.first_name" class="yellow-button" ng-class="{'disabled': snapForm.household.$invalid}"
+     ng-click="completedEligibilityHousehold()">Continue</div>
+
+
+
+
